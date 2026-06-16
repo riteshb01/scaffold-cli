@@ -1,2 +1,0 @@
-[console_scripts]
-scaffold = scaffold_cli.cli:main
