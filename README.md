@@ -1,12 +1,17 @@
 # scaffold-cli
 
-A minimal command-line tool that spins up new dev projects in one command — folders, boilerplate, and an initial git commit, all done.
+> A minimal command-line tool that spins up new dev projects in one command — folders, boilerplate, and an initial git commit, all done.
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
+[![Python](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/)
+[![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](./CONTRIBUTING.md)
+[![Open Source](https://img.shields.io/badge/Open%20Source-%E2%9D%A4-red.svg)](https://github.com/riteshb01/scaffold-cli)
 
 ```bash
-scaffold new my-api --type flask
-scaffold new my-app --type nextjs
-scaffold new my-tool --type python-cli
-scaffold new my-site --type django
+scaffold new my-api     --type flask
+scaffold new my-app     --type nextjs
+scaffold new my-tool    --type python-cli
+scaffold new my-site    --type django
 ```
 
 ---
@@ -26,7 +31,7 @@ pip install scaffold-cli
 Or install from source:
 
 ```bash
-git clone https://github.com/yourusername/scaffold-cli.git
+git clone https://github.com/riteshb01/scaffold-cli.git
 cd scaffold-cli
 pip install -e .
 ```
@@ -62,6 +67,9 @@ scaffold new my-frontend --type nextjs --code
 
 # Python CLI tool, placed in a specific folder
 scaffold new my-tool --type python-cli --output ~/projects
+
+# Full Django project
+scaffold new my-site --type django
 ```
 
 ### List available templates
@@ -124,12 +132,26 @@ my-tool/
 ### `django`
 ```
 my-site/
-├── my-site/
-│   ├── __init__.py
-│   ├── settings.py
-│   └── urls.py
 ├── manage.py
+├── my-site/             # project package
+│   ├── settings.py      # dotenv-based config
+│   ├── urls.py
+│   ├── wsgi.py
+│   └── asgi.py
+├── core/                # pre-built app
+│   ├── views.py
+│   ├── urls.py
+│   ├── models.py
+│   ├── admin.py
+│   └── tests.py
+├── templates/
+│   ├── base.html
+│   └── core/index.html
+├── static/
+│   ├── css/main.css
+│   └── js/main.js
 ├── requirements.txt
+├── .env.example
 ├── .gitignore
 └── README.md
 ```
@@ -164,6 +186,23 @@ scaffold new my-project --type my-template
 
 ---
 
+## Contributing
+
+**scaffold-cli is open source and contributions are very welcome!** 🙌
+
+Whether it's a bug fix, a new template, or a documentation improvement — every contribution matters.
+
+👉 Read the [**Contributing Guide**](./CONTRIBUTING.md) to get started.
+
+Ways to contribute:
+- 🐛 [Report a bug](https://github.com/riteshb01/scaffold-cli/issues)
+- 💡 [Suggest a feature](https://github.com/riteshb01/scaffold-cli/issues)
+- 🔧 Submit a pull request
+- 📝 Improve the documentation
+- ⭐ Star the repo if you find it useful!
+
+---
+
 ## License
 
-MIT
+[MIT](./LICENSE) © [Ritesh Bastola](https://github.com/riteshb01)
